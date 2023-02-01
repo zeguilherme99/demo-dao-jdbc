@@ -81,6 +81,8 @@ public class DepartmentDaoJDBC implements DepartmentDao {
             st.executeUpdate();
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
+        } finally {
+            DB.closeStatment(st);
         }
     }
 
@@ -108,6 +110,9 @@ public class DepartmentDaoJDBC implements DepartmentDao {
             return departments;
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
+        } finally {
+            DB.closeResultSet(rs);
+            DB.closeStatment(st);
         }
     }
 }
