@@ -24,5 +24,9 @@ public class MainDepartment {
         System.out.println("\n==== TEST 3: seller findAll =====");
         List<Department> departments = departmentDao.findAll();
         departments.forEach(System.out::println);
+
+        System.out.println("\n==== TEST 4: seller delete =====");
+        departmentDao.deleteById(8);
+        System.out.println("Deleted");
     }
 }
