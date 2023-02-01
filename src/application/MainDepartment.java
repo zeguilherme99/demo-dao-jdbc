@@ -28,5 +28,9 @@ public class MainDepartment {
         System.out.println("\n==== TEST 4: department delete =====");
         departmentDao.deleteById(8);
         System.out.println("Deleted");
+
+        System.out.println("\n==== TEST 5: seller findById =====");
+        Department departmentFind = departmentDao.findById(2);
+        System.out.println(departmentFind);
     }
 }
